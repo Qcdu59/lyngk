@@ -9,5 +9,5 @@ LyngkTestCase.prototype.testA = function(){
 
 LyngkTestCase.prototype.testB = function(){
     var c = new Lyngk.Coordinates();
-    assertFalse(c.check43());
+    assertFalse(c.check43()); 
 }
