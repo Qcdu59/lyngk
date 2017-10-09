@@ -8,6 +8,16 @@ LyngkTestCase.prototype.testA = function(){
 };
 
 LyngkTestCase.prototype.testB = function(){
-    var c = new Lyngk.Coordinates();
-    assertFalse(c.check43()); 
+    var compteur = 0;
+    var lettre = ['A','B','C','D','E','F','G','H','I'];
+
+    for (var i = 0 ; i<lettre.length; i++) {
+        for (var j = 1; j < 10; j++) {
+            var c = new Lyngk.Coordinates(lettre[i],j);
+            if (c.check()) {
+                compteur++;
+            }
+        }
+    }
+    assertTrue(compteur === 43);
 }
