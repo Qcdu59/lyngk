@@ -29,5 +29,11 @@ LyngkTestCase.prototype.testC = function(){
 
 LyngkTestCase.prototype.testD = function(){
     var c = new Lyngk.Coordinates('A',1);
-    assertTrue(c.toString()=='invalid');
+    assertTrue(c.toString() === 'invalid');
+}
+
+LyngkTestCase.prototype.testE = function(){
+    var c = new Lyngk.Coordinates('A',3);
+    var clone = c.clone();
+    assertTrue(c.toString() === clone.toString)
 }
