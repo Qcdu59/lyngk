@@ -26,3 +26,8 @@ LyngkTestCase.prototype.testC = function(){
     var c = new Lyngk.Coordinates('A',3);
     assertEquals(c.toString(), 'A3');
 }
+
+LyngkTestCase.prototype.testD = function(){
+    var c = new Lyngk.Coordinates('A',1);
+    assertFalse(c.toString());
+}
