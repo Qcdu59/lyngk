@@ -24,6 +24,17 @@ Lyngk.Coordinates = function (co, li) {
     }
 
     this.toString = function () {
+        if(!this.check())
+            return 'invalid'
         return c+l;
+    }
+
+    this.clone = function () {
+        return new Lyngk.Coordinates(co,li);
+    }
+
+    this.hash = function () {
+        var hashC = ((co.charCodeAt()-64)*10)+li;
+        return hashC;
     }
 };
