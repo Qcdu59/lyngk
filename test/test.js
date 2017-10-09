@@ -24,5 +24,5 @@ LyngkTestCase.prototype.testB = function(){
 
 LyngkTestCase.prototype.testC = function(){
     var c = new Lyngk.Coordinates('A',3);
-    assertTrue(c.represent());
+    assertEquals(c.toString(), 'A3');
 }
