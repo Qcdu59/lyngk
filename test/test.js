@@ -54,3 +54,10 @@ LyngkTestCase.prototype.testH = function(){
     c.ajoutPiece(Lyngk.Color.BLUE);
     assertTrue(c.getState() === Lyngk.State.ONE_PIECE && c.getColorInter() === Lyngk.Color.BLUE);
 }
+
+LyngkTestCase.prototype.testI = function(){
+    var c = new Lyngk.Intersection('B',2);
+    c.ajoutPiece(Lyngk.Color.BLUE);
+    c.ajoutPiece(Lyngk.Color.RED);
+    assertTrue(c.getState() === Lyngk.State.STACK && c.getColorInter() === Lyngk.Color.RED);
+}
