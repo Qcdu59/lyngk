@@ -41,5 +41,10 @@ LyngkTestCase.prototype.testE = function(){
 LyngkTestCase.prototype.testF = function(){
     var c = new Lyngk.Coordinates('B',4);
     var hash = c.hash();
-    assertTrue(c.hash === 24);
+    assertTrue(hash === 24);
+}
+
+LyngkTestCase.prototype.testG = function(){
+    var c = new Lyngk.Intersection();
+    assertEquals(c.getState(),0);
 }
