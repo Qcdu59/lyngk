@@ -29,5 +29,5 @@ LyngkTestCase.prototype.testC = function(){
 
 LyngkTestCase.prototype.testD = function(){
     var c = new Lyngk.Coordinates('A',1);
-    assertFalse(c.toString());
+    assertTrue(c.toString()=='invalid');
 }
