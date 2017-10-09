@@ -26,6 +26,11 @@ Lyngk.Intersection = function (c) {
         if(c === Lyngk.Color.BLUE){
             couleurInter = c;
             state = Lyngk.State.ONE_PIECE;
+        } else {
+            if(c === Lyngk.Color.RED){
+                couleurInter = c;
+                state = Lyngk.State.STACK;
+            }
         }
     }
 };
