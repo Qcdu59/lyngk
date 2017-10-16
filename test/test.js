@@ -81,6 +81,58 @@ LyngkTestCase.prototype.test11 = function(){
             cpt_one_piece++;
             }
         }
-    console.log(cpt_one_piece);
     assertEquals(cpt_one_piece,43);
+}
+
+LyngkTestCase.prototype.test12 = function(){
+    var jeu = new Lyngk.Engine();
+    jeu.Init_plateau43();
+    var cpt_inter_ok;
+
+    var cpt_ivoire = 0;
+    var cpt_bleu = 0;
+    var cpt_rouge = 0;
+    var cpt_noir = 0;
+    var cpt_vert = 0;
+    var cpt_blanc = 0;
+
+    var nbPieceValid=0;
+    for(var i=0;i<jeu.getTaillePlateau();i++){
+        if(jeu.getTaillePileInter(i)=== 43) {
+            cpt_inter_ok++;
+        }
+
+        for (var j = 0; j < 43; j++) {
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.IVORY){
+                cpt_ivoire++;
+            }
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.BLUE){
+                cpt_bleu++;
+            }
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.RED){
+                cpt_rouge++;
+            }
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.BLACK){
+                cpt_noir++;
+            }
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.GREEN){
+                cpt_vert++;
+            }
+            if(jeu.getCouleurFromPieceFromInterS(i,j) == Lyngk.Color.WHITE){
+                cpt_blanc++;
+            }
+        }
+        if(cpt_ivoire === 8 && cpt_bleu === 8 && cpt_rouge === 8 && cpt_noir === 8 && cpt_vert === 8 && cpt_blanc === 3){
+            nbPieceValid++;
+        }
+
+        cpt_ivoire=0;
+        cpt_bleu=0;
+        cpt_rouge=0;
+        cpt_noir=0;
+        cpt_vert=0;
+        cpt_blanc=0;
+    }
+    assertTrue(cpt_inter_ok === 43 && nbPieceValid===43);
+
 }
