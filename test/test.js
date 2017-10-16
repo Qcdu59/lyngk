@@ -71,3 +71,15 @@ LyngkTestCase.prototype.testJ = function(){
     c.ajoutPiece(Lyngk.Color.BLACK);
     assertTrue(c.getState() === Lyngk.State.FULL_STACK);
 }
+
+LyngkTestCase.prototype.testHist11 = function () {
+    var jeu = new Lyngk.Engine();
+    var cpt_one_piece=0;
+    for(var i=0;i<jeu.plateau.size();i++) {
+        jeu.plateau[i].ajoutPiece(Lyngk.Color.BLUE);
+        if (jeu.plateau[i].getState() == Lyngk.State.ONE_PIECE){
+            cpt_one_piece++;
+            }
+        }
+    assertTrue(cpt_one_piece==43);
+}
