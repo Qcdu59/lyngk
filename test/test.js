@@ -72,14 +72,15 @@ LyngkTestCase.prototype.testJ = function(){
     assertTrue(c.getState() === Lyngk.State.FULL_STACK);
 }
 
-LyngkTestCase.prototype.testHist11 = function () {
+LyngkTestCase.prototype.testK = function(){
     var jeu = new Lyngk.Engine();
+    jeu.Init_plateau();
     var cpt_one_piece=0;
-    for(var i=0;i<jeu.plateau.size();i++) {
-        jeu.plateau[i].ajoutPiece(Lyngk.Color.BLUE);
-        if (jeu.plateau[i].getState() == Lyngk.State.ONE_PIECE){
+    for(var i=0;i<jeu.getTaillePlateau();i++) {
+        if (jeu.getEtat(i) === Lyngk.State.ONE_PIECE){
             cpt_one_piece++;
             }
         }
-    assertTrue(cpt_one_piece==43);
+    console.log(cpt_one_piece);
+    assertEquals(cpt_one_piece,43);
 }
