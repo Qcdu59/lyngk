@@ -20,16 +20,23 @@ Lyngk.Intersection = function (c) {
         return couleurInter;
     }
 
+    this.getTaillePile = function(){
+        return pile.length;
+    }
+
     this.ajoutPiece = function(c){
         piece = new Lyngk.Piece(c);
         pile.push(c);
-        if(c === Lyngk.Color.BLUE){
-            couleurInter = c;
+        couleurInter = c;
+        if(pile.length === 1){
             state = Lyngk.State.ONE_PIECE;
         } else {
-            if(c === Lyngk.Color.RED){
-                couleurInter = c;
+            if(pile.length>1 && pile.length<5){
                 state = Lyngk.State.STACK;
+            } else {
+                if(pile.length >= 5){
+                    state = Lyngk.State.FULL_STACK;
+                }
             }
         }
     }
