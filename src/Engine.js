@@ -63,11 +63,14 @@ Lyngk.Engine = function () {
                 }
             }
         }
-
     };
 
     this.getTaillePlateau = function(){
         return plateau.length;
+    };
+
+    this.getTaillePileInter = function(i){
+        return plateau[i].getTaillePile();
     };
 
     this.getEtat = function(i){
