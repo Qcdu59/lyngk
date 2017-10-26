@@ -97,22 +97,22 @@ LyngkTestCase.prototype.test12 = function(){
 
     for(var j=0;j<jeu.getTaillePlateau();j++) {
 
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.IVORY) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.IVORY) {
             cpt_ivoire++;
         }
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.BLUE) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.BLUE) {
             cpt_bleu++;
         }
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.RED) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.RED) {
             cpt_rouge++;
         }
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.BLACK) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.BLACK) {
             cpt_noir++;
         }
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.GREEN) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.GREEN) {
             cpt_vert++;
         }
-        if (jeu.getCouleurPieceInter(j) == Lyngk.Color.WHITE) {
+        if (jeu.getCouleurPieceInter(j) === Lyngk.Color.WHITE) {
             cpt_blanc++;
         }
     }
@@ -128,6 +128,13 @@ LyngkTestCase.prototype.test13 = function(){
             cpt_inter++;
         }
     }
-    console.log(cpt_inter);
     assertEquals(cpt_inter,jeu.getTaillePlateau());
 };
+
+LyngkTestCase.prototype.test14 = function(){
+    var jeu = new Lyngk.Intersection();
+    jeu.ajoutPiece(Lyngk.Color.BLUE);
+    jeu.ajoutPiece(Lyngk.Color.GREEN);
+    assertEquals(jeu.getColorInter(),Lyngk.Color.GREEN);
+};
+
