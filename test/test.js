@@ -138,3 +138,13 @@ LyngkTestCase.prototype.test14 = function(){
     assertEquals(jeu.getColorInter(),Lyngk.Color.GREEN);
 };
 
+LyngkTestCase.prototype.test15 = function(){
+    var jeu = new Lyngk.Engine();
+    jeu.Init_plateau43();
+    var colorDepart = jeu.getCoord("A3").getColorInter();
+    console.log(colorDepart);
+    jeu.move("A3","B3");
+    var colorArrivee = jeu.getCoord("B3").getColorInter();
+    var etat = jeu.getCoord("A3").getState();
+    assertTrue(etat === Lyngk.State.VACANT && colorDepart === colorArrivee);
+}
